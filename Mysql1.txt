@@ -1,0 +1,30 @@
+Online Food Application
+(All table’s Queries)
+•	Database Query:
+Create database OnlineFoodApplication;
+•	LOGIN TABLE
+Create table Login(UserName Varchar(50),Password Varchar(50));
+
+•	CUSTOMER TABLE
+create table Customer(CustId int(30)PRIMARY KEY NOT NULL AUTO_INCREMENT,
+FirstName varchar(50)NOT NULL,
+LastName varchar(40),
+EmailId varchar(50),
+Contact_id int,
+AddressId int,
+UserName varchar(50));
+
+•	Adding Foreign key
+alter table Customer ADD FOREIGN KEY(AddressId) REFERENCES AddressDetails(AddressId);
+
+alter table Customer ADD FOREIGN KEY(Contact_id) REFERENCES ContactDetails(Contact_id);
+
+alter table Customer ADD FOREIGN KEY(UserName) REFERENCES Login(UserName);
+
+•	CONTACTDETAILS TABLE
+Create table ContactDetails(Contact_id int(30)Primary key NOT NULL,CountryCode varchar(20),Mobile int(40));
+
+•	ADDRESSDETAILS TABLE
+Create table AddressDetails(AddressId int(30)Primary key NOT NULL,AddressLine1 varchar(50)NOT NULL,AddressLine varchar(40),Pincode int(40)NOT NULL);
+
+
